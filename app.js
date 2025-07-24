@@ -3,13 +3,13 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 const projectRoutes = require('./routes/project');
-const member = require('./routes/member')
+const membershipRoute = require('./routes/membershipRoute')
 const app = express();
 
 app.use(express.json()); 
 app.use(cors());
 app.use('/api/project/', projectRoutes);
-app.use('/api/member/', member)
+app.use('/api', membershipRoute)
 
 app.get("/", (req, res) => {
   res.send("Hello, World!");

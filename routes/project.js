@@ -57,7 +57,8 @@ router.post('/add', multiUpload, async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    const projects = await Project.find().sort({ createdAt: -1 });
+    const projects = await Project.find().sort({ createdAt: -1 })
+      .allowDiskUse(true);
     res.status(200).json(projects);
   } catch (error) {
     console.error('Error fetching projects:', error);

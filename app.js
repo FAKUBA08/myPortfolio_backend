@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/api/project/', projectRoutes);
 app.use('/api', membershipRoute)
-app.use('/api/messages', messageRoute);
+app.use('/api/messages/', messageRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello, World!");
